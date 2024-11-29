@@ -7,6 +7,7 @@ export default function Home() {
       <main className={styles.main}>
         <Image className={styles.logo} src="/logo.svg" alt="МТС logo" width={400} height={400} priority />
       </main>
+      <h1 className={styles.heading}>ПОРТАЛ</h1>
     </div>
   );
 }

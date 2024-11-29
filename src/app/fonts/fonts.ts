@@ -1,6 +1,6 @@
 import localFont from 'next/font/local';
 
-export const mtsText = localFont({
+export const MTSText = localFont({
   src: [
     {
       path: './Text/MTSText-Regular/MTSText-Regular.woff2',
@@ -26,7 +26,7 @@ export const mtsText = localFont({
   preload: true,
 });
 
-export const mtsWide = localFont({
+export const MTSWide = localFont({
   src: [
     {
       path: './Wide/MTSWide-Light/MTSWide-Light.woff2',
@@ -56,3 +56,5 @@ export const mtsWide = localFont({
   ],
   preload: true,
 });
+
+console.log(MTSText, MTSWide);

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { mtsText, mtsWide } from './fonts/fonts';
+import { MTSText, MTSWide } from './fonts/fonts';
 
 export const metadata: Metadata = {
   title: 'Поиск сотрудника',
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${mtsText} ${mtsWide}`}>{children}</body>
+      <body className={`${MTSText} ${MTSWide}`}>{children}</body>
     </html>
   );
 }
