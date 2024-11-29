@@ -56,5 +56,3 @@ export const MTSWide = localFont({
   ],
   preload: true,
 });
-
-console.log(MTSText, MTSWide);

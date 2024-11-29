@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './page.module.scss';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
         <Image className={styles.logo} src="/logo.svg" alt="МТС logo" width={400} height={400} priority />
       </main>
       <h1 className={styles.heading}>ПОРТАЛ</h1>
+      <Link href="/user">User</Link>
     </div>
   );
 }
