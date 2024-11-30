@@ -1,15 +1,14 @@
-import Image from 'next/image';
-import styles from './page.module.scss';
 import Link from 'next/link';
+import Header from './header/header';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image className={styles.logo} src="/logo.svg" alt="МТС logo" width={400} height={400} priority />
+    <div className="container">
+      <title>Поиск сотрудника</title>
+      <Header></Header>
+      <main>
+        <Link href="/user">User</Link>
       </main>
-      <h1 className={styles.heading}>ПОРТАЛ</h1>
-      <Link href="/user">User</Link>
     </div>
   );
 }
