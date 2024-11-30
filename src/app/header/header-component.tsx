@@ -1,5 +1,4 @@
 import Image from 'next/image';
-// import styles from './../page.module.scss';
 import styles from './header.module.scss';
 import { InputAdornment, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
@@ -21,6 +20,7 @@ export default function Header() {
                   <SearchIcon></SearchIcon>
                 </InputAdornment>
               ),
+              sx: { borderRadius: 16 },
             },
           }}
           size="small"

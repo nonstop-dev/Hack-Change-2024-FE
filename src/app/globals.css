@@ -53,3 +53,7 @@ a {
   border-color: transparent;
   border-radius: 28px;
 }
+
+.defaultAvatar {
+  border-radius: 28px;
+}

@@ -1,0 +1,22 @@
+.userPageContainer,
+.workInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mainInfo,
+.companyInfo,
+.otherInfo {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 16px;
+}
+
+.mainCard {
+  flex-grow: 2;
+}
+
+.companyInfo {
+  flex-grow: 1;
+}
