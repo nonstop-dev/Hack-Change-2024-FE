@@ -1,6 +1,7 @@
 import styles from './user.module.scss';
 import { Avatar, Box, Breadcrumbs, Button, Card, CardContent, CardHeader, Chip, Link, Typography } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import UserMiniCard from '../user-mini-card/user-mini-card';
 
 function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
   event.preventDefault();
@@ -75,6 +76,14 @@ export default function User() {
                 }}
                 className="textSm"
               />
+              <Chip
+                label={'отпуск до 23 декабря'}
+                sx={{
+                  background: '#000',
+                  color: '#fff',
+                }}
+                className="textSm"
+              />
             </div>
           </CardContent>
         </Card>
@@ -123,16 +132,21 @@ export default function User() {
                 Руководители
               </Typography>
               <Box className={styles.cardInfoContentBox}>
-                <Avatar
-                  sx={{ width: 64, height: 64 }}
-                  src="user.png"
-                  variant="rounded"
-                  className={styles.avatar + ' mdAvatar'}></Avatar>
-                <Avatar
-                  sx={{ width: 64, height: 64 }}
-                  src="user.png"
-                  variant="rounded"
-                  className={styles.avatar + ' mdAvatar'}></Avatar>
+                <UserMiniCard
+                  avatarSrc="user.png"
+                  position="Арт-директор"
+                  fullname="Иван иванов"
+                  nickname="@vanyavanya"></UserMiniCard>
+                <UserMiniCard
+                  avatarSrc="user.png"
+                  position="Арт-директор"
+                  fullname="Иван иванов"
+                  nickname="@vanyavanya"
+                  breadCrumbs={[
+                    { url: 'test', title: 'test' },
+                    { url: 'test', title: 'test' },
+                    { url: 'test', title: 'test' },
+                  ]}></UserMiniCard>
               </Box>
             </CardContent>
           </Card>

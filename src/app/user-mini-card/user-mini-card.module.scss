@@ -1,0 +1,21 @@
+.userMiniCardWrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.rightPart {
+  & > p {
+    color: #00000080;
+
+    &:nth-child(2) {
+      color: #000;
+    }
+  }
+}
+
+.fullname {
+  font-family: MTSWide, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 17.6px;
+}
