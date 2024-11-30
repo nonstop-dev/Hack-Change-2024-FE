@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import styles from './header.module.scss';
-import { Autocomplete, Avatar, Box, IconButton, InputAdornment, Stack, TextField } from '@mui/material';
+import { Autocomplete, Avatar, Box, IconButton, InputAdornment, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { usePathname } from 'next/navigation';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 
-const top100Films = [
+export const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },
   { title: 'The Godfather', year: 1972 },
   { title: 'The Godfather: Part II', year: 1974 },

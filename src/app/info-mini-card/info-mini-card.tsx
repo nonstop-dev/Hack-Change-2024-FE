@@ -1,6 +1,6 @@
 import { Avatar, Box, Breadcrumbs, Link, Typography } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import styles from './user-mini-card.module.scss';
+import styles from './info-mini-card.module.scss';
 
 interface UserMiniCardProps {
   position: string;
@@ -13,7 +13,7 @@ interface UserMiniCardProps {
   }[];
 }
 
-export default function UserMiniCard({ position, fullname, nickname, avatarSrc, breadCrumbs }: UserMiniCardProps) {
+export default function InfoMiniCard({ position, fullname, nickname, avatarSrc, breadCrumbs }: UserMiniCardProps) {
   const breadcrumbs = breadCrumbs?.map((crumb, index) => {
     return (
       <Link underline="hover" key={index} color="inherit" href={crumb.url}>

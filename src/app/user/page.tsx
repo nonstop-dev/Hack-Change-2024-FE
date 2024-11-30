@@ -1,7 +1,7 @@
 import styles from './user.module.scss';
 import { Avatar, Box, Breadcrumbs, Button, Card, CardContent, CardHeader, Chip, Link, Typography } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import UserMiniCard from '../user-mini-card/user-mini-card';
+import InfoMiniCard from '../info-mini-card/info-mini-card';
 
 function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
   event.preventDefault();
@@ -132,12 +132,12 @@ export default function User() {
                 Руководители
               </Typography>
               <Box className={styles.cardInfoContentBox}>
-                <UserMiniCard
+                <InfoMiniCard
                   avatarSrc="user.png"
                   position="Арт-директор"
                   fullname="Иван иванов"
-                  nickname="@vanyavanya"></UserMiniCard>
-                <UserMiniCard
+                  nickname="@vanyavanya"></InfoMiniCard>
+                <InfoMiniCard
                   avatarSrc="user.png"
                   position="Арт-директор"
                   fullname="Иван иванов"
@@ -146,7 +146,7 @@ export default function User() {
                     { url: 'test', title: 'test' },
                     { url: 'test', title: 'test' },
                     { url: 'test', title: 'test' },
-                  ]}></UserMiniCard>
+                  ]}></InfoMiniCard>
               </Box>
             </CardContent>
           </Card>
