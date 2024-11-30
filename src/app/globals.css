@@ -58,11 +58,15 @@ a {
   border-radius: 28px;
 }
 
+.mdAvatar {
+  border-radius: 16px;
+}
+
 .textMd {
   font-family: MTSText, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 19.2px;
 }
 
 .textSm {
@@ -72,9 +76,29 @@ a {
   line-height: 16.8px;
 }
 
+.cardContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .cardHeading {
   font-family: MTSWide, sans-serif;
   font-size: 26px;
   font-weight: 500;
   line-height: 31.2px;
+}
+
+.cardSubHeading {
+  font-family: MTSText, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.6px;
+}
+
+.cardTextInfo {
+  font-family: MTSText, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
 }
