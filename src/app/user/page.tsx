@@ -3,11 +3,6 @@ import { Avatar, Box, Breadcrumbs, Button, Card, CardContent, CardHeader, Chip, 
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import InfoMiniCard from '../info-mini-card/info-mini-card';
 
-function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-  event.preventDefault();
-  console.info('You clicked a breadcrumb.');
-}
-
 const breadcrumbs = [
   <Link underline="hover" key="1" color="inherit" href="/">
     MUI
