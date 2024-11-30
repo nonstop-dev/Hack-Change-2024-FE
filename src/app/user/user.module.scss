@@ -20,3 +20,31 @@
 .companyInfo {
   flex-grow: 1;
 }
+
+.mainInfoFocusedText {
+  max-width: 490px;
+  font-family: MTSWide, sans-serif;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 57.2px;
+  text-transform: uppercase;
+}
+
+.mainInfoHeader {
+  font-family: MTSText, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.mainInfoMdText {
+  color: #00000080;
+}
+
+.scheduleInfo {
+  max-width: 215px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
