@@ -24,5 +24,13 @@
 }
 
 .headerRight {
-  // text
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.userSettings {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }

@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import styles from './header.module.scss';
-import { InputAdornment, TextField } from '@mui/material';
+import { Avatar, Box, IconButton, InputAdornment, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { usePathname } from 'next/navigation';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 
 export default function Header() {
   const path = usePathname();
@@ -34,6 +35,12 @@ export default function Header() {
             variant="outlined"
           />
         )}
+        <Box className={styles.userSettings}>
+          <IconButton>
+            <SettingsOutlinedIcon sx={{ width: 36, height: 36 }} />
+          </IconButton>
+          <Avatar sx={{ width: 48, height: 48 }} src="user.png" variant="rounded" className="mdAvatar"></Avatar>
+        </Box>
       </div>
     </header>
   );
