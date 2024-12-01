@@ -3,7 +3,9 @@ import { Autocomplete, TextField, InputAdornment, Box, Typography, Button } from
 import SearchIcon from '@mui/icons-material/Search';
 import style from './search-page.module.scss';
 import InfoMiniCard from '../info-mini-card/info-mini-card';
-
+import { useEffect, useState } from 'react';
+import employeesData from '../../../employees.json';
+export const dynamic = 'force-dynamic';
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },
   { title: 'The Godfather', year: 1972 },
@@ -12,9 +14,24 @@ const top100Films = [
   { title: '12 Angry Men', year: 1957 },
 ];
 
-export default function SearchPage() {
+export default async function SearchPage() {
   'use client';
-
+  const employees: any[] = employeesData;
+  console.log(employees);
+  //fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => value.json().then(v => (employees = v)));
+  // const [employees, setEmployees] = useState<[]>([]);
+  // useEffect(() => {
+  //   fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => {
+  //     value.json().then(v => {
+  //       console.log(v);
+  //       setEmployees(v);
+  //     });
+  //   });
+  // }, []);
+  //let data = await fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees');
+  // let employees = await data.json();
+  // console.log(employees);
+  //console.log('employees');
   const isResult = false;
   return (
     <Box className={style.searchPageFlexContainer}>
@@ -127,28 +144,38 @@ export default function SearchPage() {
           <Typography variant="h5" className="cardHeading" sx={{ marginBottom: '30px' }}>
             Сотрудники
           </Typography>
-          <Box className={style.infoMiniCardContainer}>
-            <InfoMiniCard
-              avatarSrc="user.png"
-              position="Арт-директор"
-              fullname="Иван иванов"
-              nickname="@vanyavanya"
-              breadCrumbs={[
-                { url: 'test', title: 'test' },
-                { url: 'test', title: 'test' },
-                { url: 'test', title: 'test' },
-              ]}></InfoMiniCard>
-            <InfoMiniCard
-              avatarSrc="user.png"
-              position="Арт-директор"
-              fullname="Иван иванов"
-              nickname="@vanyavanya"
-              breadCrumbs={[
-                { url: 'test', title: 'test' },
-                { url: 'test', title: 'test' },
-                { url: 'test', title: 'test' },
-              ]}></InfoMiniCard>
-          </Box>
+          {employees.map(employee => (
+            <Box className={style.infoMiniCardContainer}>
+              <InfoMiniCard
+                position={employee.role}
+                fullname={employee.name}
+                avatarSrc="user.png"
+                nickname={employee.nickname}>
+                {employee.role}
+                {employee.name}
+                breadCrumbs=
+                {[
+                  { url: 'test', title: 'test' },
+                  { url: 'test', title: 'test' },
+                  { url: 'test', title: 'test' },
+                ]}
+              </InfoMiniCard>
+            </Box>
+          ))}
+          {/* {employees.map((employee: any) => {
+            <Box className={style.infoMiniCardContainer}>
+              <InfoMiniCard
+                avatarSrc="user.png"
+                position={employee.role}
+                fullname={employee.name}
+                nickname={employee.nickname}
+                breadCrumbs={[
+                  { url: 'test', title: 'test' },
+                  { url: 'test', title: 'test' },
+                  { url: 'test', title: 'test' },
+                ]}></InfoMiniCard>
+            </Box>;
+          })} */}
         </Box>
         <Box>
           <Typography variant="h5" className="cardHeading" sx={{ marginBottom: '30px' }}>
