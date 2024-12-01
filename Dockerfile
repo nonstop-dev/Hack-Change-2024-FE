@@ -8,4 +8,4 @@ COPY . .
 EXPOSE 3000
 ADD start.sh /
 RUN chmod +x /start.sh
-CMD ["/start.sh"]
+CMD ["npm", "run", "dev"]
