@@ -16,10 +16,10 @@ const top100Films = [
 
 export default async function SearchPage() {
   'use client';
-  const employees: any[] = employeesData;
-  console.log(employees);
+  let employees: any[] = employeesData;
+  //console.log(employees);
   //fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => value.json().then(v => (employees = v)));
-  // const [employees, setEmployees] = useState<[]>([]);
+  //const [employees, setEmployees] = useState<any>(employeesData);
   // useEffect(() => {
   //   fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => {
   //     value.json().then(v => {
@@ -32,6 +32,18 @@ export default async function SearchPage() {
   // let employees = await data.json();
   // console.log(employees);
   //console.log('employees');
+  const onChangeLocation = (event: any) => {
+    let val = event.target.value;
+    let employees;
+    if (val.startsWith('@')) {
+      employees = employeesData.filter(emp => emp.nickname.includes(val.substring(1)));
+    } else {
+      employees = employeesData.filter(emp => emp.name.includes(val));
+      console.log(employees);
+      //setEmployees(employees);
+    }
+    console.log(employees);
+  };
   const isResult = false;
   return (
     <Box className={style.searchPageFlexContainer}>
@@ -45,6 +57,7 @@ export default async function SearchPage() {
             <TextField
               {...params}
               placeholder="ФИО, никнейм или должность"
+              onChange={onChangeLocation}
               slotProps={{
                 input: {
                   type: 'search',
@@ -144,7 +157,7 @@ export default async function SearchPage() {
           <Typography variant="h5" className="cardHeading" sx={{ marginBottom: '30px' }}>
             Сотрудники
           </Typography>
-          {employees.map(employee => (
+          {employees.map((employee: any) => (
             <Box className={style.infoMiniCardContainer}>
               <InfoMiniCard
                 position={employee.role}
