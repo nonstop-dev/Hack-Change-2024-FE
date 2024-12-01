@@ -21,7 +21,7 @@ export default function User() {
       <div className={styles.mainInfo}>
         <Avatar
           sx={{ width: 328, height: 328 }}
-          src="user.png"
+          src="user.jpg"
           variant="rounded"
           className={styles.avatar + ' defaultAvatar'}></Avatar>
         <Card sx={{ minWidth: 275 }} className={styles.mainCard + ' defaultCard'}>
@@ -128,12 +128,12 @@ export default function User() {
               </Typography>
               <Box className={styles.cardInfoContentBox}>
                 <InfoMiniCard
-                  avatarSrc="user.png"
+                  avatarSrc="user.jpg"
                   position="Арт-директор"
                   fullname="Иван иванов"
                   nickname="@vanyavanya"></InfoMiniCard>
                 <InfoMiniCard
-                  avatarSrc="user.png"
+                  avatarSrc="user.jpg"
                   position="Арт-директор"
                   fullname="Иван иванов"
                   nickname="@vanyavanya"

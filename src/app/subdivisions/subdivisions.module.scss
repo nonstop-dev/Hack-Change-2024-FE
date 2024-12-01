@@ -7,8 +7,12 @@
 }
 
 .activeSelection {
-  color: #fff !important;
-  background-color: #ff0032 !important;
+  background-color: #7e7e8e33 !important;
+  border-radius: 16px;
+
+  & > .MuiTabs-indicator {
+    display: none;
+  }
 }
 
 .subdivisionsHeading {
@@ -16,4 +20,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.parentAccourdeonBox {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.childTabBox {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+  text-transform: none;
+  color: #000;
 }

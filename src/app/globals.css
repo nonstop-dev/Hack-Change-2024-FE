@@ -100,3 +100,29 @@ a {
 .subdivisionsAccordion::before {
   display: none;
 }
+
+.whiteTextOverride {
+  color: #fff;
+}
+
+.whiteTextOverride p,
+.whiteTextOverride div {
+  color: #fff !important;
+}
+
+.whiteTextOverride p,
+.whiteTextOverride div :nth-child(2) {
+  color: #fff !important;
+}
+
+.childTab .MuiTabs-indicator {
+  display: none;
+}
+
+.MuiPaper-root {
+  box-shadow: none;
+}
+
+.MuiAccordionDetails-root {
+  background-color: #fff;
+}

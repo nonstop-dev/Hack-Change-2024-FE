@@ -11,9 +11,17 @@ interface UserMiniCardProps {
     url: string;
     title: string;
   }[];
+  classNameOverride?: string;
 }
 
-export default function InfoMiniCard({ position, fullname, nickname, avatarSrc, breadCrumbs }: UserMiniCardProps) {
+export default function InfoMiniCard({
+  position,
+  fullname,
+  nickname,
+  avatarSrc,
+  breadCrumbs,
+  classNameOverride,
+}: UserMiniCardProps) {
   const breadcrumbs = breadCrumbs?.map((crumb, index) => {
     return (
       <Link underline="hover" key={index} color="inherit" href={crumb.url}>
@@ -21,8 +29,11 @@ export default function InfoMiniCard({ position, fullname, nickname, avatarSrc, 
       </Link>
     );
   });
+
+  const whiteClassOverride = classNameOverride ? classNameOverride : '';
+
   return (
-    <Box className={styles.userMiniCardWrapper}>
+    <Box className={styles.userMiniCardWrapper + whiteClassOverride}>
       {avatarSrc ? (
         <Avatar
           sx={{ width: 64, height: 64 }}

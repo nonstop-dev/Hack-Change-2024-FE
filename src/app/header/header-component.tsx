@@ -61,7 +61,7 @@ export default function Header() {
             <SettingsOutlinedIcon sx={{ width: 36, height: 36 }} />
           </IconButton>
           <Link href="/user" style={{ textDecoration: 'none' }}>
-            <Avatar sx={{ width: 48, height: 48 }} src="user.png" variant="rounded" className="mdAvatar"></Avatar>
+            <Avatar sx={{ width: 48, height: 48 }} src="user.jpg" variant="rounded" className="mdAvatar"></Avatar>
           </Link>
         </Box>
       </div>

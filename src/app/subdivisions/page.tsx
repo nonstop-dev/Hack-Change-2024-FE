@@ -57,10 +57,10 @@ export default function ControlledAccordions() {
                 Руководитель
               </Typography>
               <InfoMiniCard
-                avatarSrc="user.png"
+                avatarSrc="boss.jpg"
                 position="Председатель банка"
-                fullname="Иван иванов"
-                nickname="@vanyavanya"></InfoMiniCard>
+                fullname="Александр Cмирнов"
+                nickname="@asmirnov"></InfoMiniCard>
             </Box>
           </CardContent>
         </Card>
@@ -107,27 +107,37 @@ export default function ControlledAccordions() {
             className="subdivisionsAccordion">
             <AccordionSummary
               expandIcon={<ExpandMoreIcon className={expanded === 'panel1' ? styles.activeSelection : ''} />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
               sx={{ borderRadius: '16px' }}
               className={expanded === 'panel1' ? styles.activeSelection : ''}>
-              <Typography>General settings</Typography>
-              <Typography>Корпоративный блок</Typography>
+              <Box className={styles.parentAccourdeonBox}>
+                <InfoMiniCard
+                  avatarSrc="zam-1.jpg"
+                  position="Заместитель председателя банка"
+                  fullname="Алексей Иванов"
+                  nickname="@alexi"></InfoMiniCard>
+                <Typography className="cardHeading">Корпоративный блок</Typography>
+              </Box>
             </AccordionSummary>
             <AccordionDetails>
               <Tabs
                 value={childTabValue}
                 onChange={handleChildTabChange}
-                aria-label="basic tabs example"
                 textColor="secondary"
-                indicatorColor="secondary"
-                variant="fullWidth">
+                variant="fullWidth"
+                className="childTab">
                 <Tab
                   value={0}
                   className={childTabValue === 0 ? styles.activeSelection : ''}
                   label={
                     <React.Fragment>
-                      <Typography>Альберт кузнецов</Typography>
+                      <Box className={styles.childTabBox}>
+                        <InfoMiniCard
+                          avatarSrc="kuznecov.jpg"
+                          position="Владелец продукта"
+                          fullname="Альберт кузнецов"
+                          nickname="@kulbert"></InfoMiniCard>
+                        <Typography className="textMd">Онлайн-банкинг для бизнеса</Typography>
+                      </Box>
                     </React.Fragment>
                   }></Tab>
                 <Tab
@@ -135,7 +145,14 @@ export default function ControlledAccordions() {
                   className={childTabValue === 1 ? styles.activeSelection : ''}
                   label={
                     <React.Fragment>
-                      <Typography>Александр семёнов</Typography>
+                      <Box className={styles.childTabBox}>
+                        <InfoMiniCard
+                          avatarSrc="semenov.jpg"
+                          position="Владелец продукта"
+                          fullname="Александр Семёнов"
+                          nickname="@sevenovalex"></InfoMiniCard>
+                        <Typography className="textMd">Транзакционные продукты</Typography>
+                      </Box>
                     </React.Fragment>
                   }
                 />
@@ -144,7 +161,14 @@ export default function ControlledAccordions() {
                   className={childTabValue === 2 ? styles.activeSelection : ''}
                   label={
                     <React.Fragment>
-                      <Typography>Алина гусева</Typography>
+                      <Box className={styles.childTabBox}>
+                        <InfoMiniCard
+                          avatarSrc="guseva.jpg"
+                          position="Владелец продукта"
+                          fullname="Алина Гусева"
+                          nickname="@guseva"></InfoMiniCard>
+                        <Typography className="textMd">Управление по работе с филиалами</Typography>
+                      </Box>
                     </React.Fragment>
                   }
                 />
@@ -156,8 +180,7 @@ export default function ControlledAccordions() {
                   square={true}
                   className="subdivisionsAccordion">
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography sx={{ width: '33%', flexShrink: 0 }}>Users</Typography>
-                    <Typography sx={{ color: 'text.secondary' }}>Розничный блок</Typography>
+                    <Typography className="textMd">Команда 1</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>
@@ -177,12 +200,21 @@ export default function ControlledAccordions() {
           </Accordion>
           <Accordion
             expanded={expanded === 'panel2'}
-            square={true}
             onChange={handleAccordeonChange('panel2')}
+            square={true}
             className="subdivisionsAccordion">
-            <AccordionSummary expandIcon={<ExpandMoreIcon />} className="subdivisionsAccordion">
-              <Typography sx={{ width: '33%', flexShrink: 0 }}>Users</Typography>
-              <Typography sx={{ color: 'text.secondary' }}>Users</Typography>
+            <AccordionSummary
+              className={expanded === 'panel2' ? styles.activeSelection : ''}
+              expandIcon={<ExpandMoreIcon className={expanded === 'panel2' ? styles.activeSelection : ''} />}
+              sx={{ borderRadius: '16px' }}>
+              <Box className={styles.parentAccourdeonBox}>
+                <InfoMiniCard
+                  avatarSrc="zam-2.jpg"
+                  position="Заместитель председателя банка"
+                  fullname="Александра Ильина"
+                  nickname="@ailinaa"></InfoMiniCard>
+                <Typography className="cardHeading">Розничный блок</Typography>
+              </Box>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>

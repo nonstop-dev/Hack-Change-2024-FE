@@ -14,9 +14,9 @@ const top100Films = [
   { title: '12 Angry Men', year: 1957 },
 ];
 
-export default async function SearchPage() {
+export default function SearchPage() {
   'use client';
-  let employees: any[] = employeesData;
+  const employees: any[] = employeesData;
   //console.log(employees);
   //fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => value.json().then(v => (employees = v)));
   //const [employees, setEmployees] = useState<any>(employeesData);
@@ -33,7 +33,7 @@ export default async function SearchPage() {
   // console.log(employees);
   //console.log('employees');
   const onChangeLocation = (event: any) => {
-    let val = event.target.value;
+    const val = event.target.value;
     let employees;
     if (val.startsWith('@')) {
       employees = employeesData.filter(emp => emp.nickname.includes(val.substring(1)));
@@ -157,12 +157,12 @@ export default async function SearchPage() {
           <Typography variant="h5" className="cardHeading" sx={{ marginBottom: '30px' }}>
             Сотрудники
           </Typography>
-          {employees.map((employee: any) => (
-            <Box className={style.infoMiniCardContainer}>
+          {employees.map((employee: any, index) => (
+            <Box className={style.infoMiniCardContainer} key={index}>
               <InfoMiniCard
                 position={employee.role}
                 fullname={employee.name}
-                avatarSrc="user.png"
+                avatarSrc="user.jpg"
                 nickname={employee.nickname}>
                 {employee.role}
                 {employee.name}
@@ -197,7 +197,7 @@ export default async function SearchPage() {
           {isResult ? (
             <Box className={style.infoMiniCardContainer}>
               <InfoMiniCard
-                avatarSrc="user.png"
+                avatarSrc="user.jpg"
                 position="Арт-директор"
                 fullname="Иван иванов"
                 nickname="@vanyavanya"
@@ -207,7 +207,7 @@ export default async function SearchPage() {
                   { url: 'test', title: 'test' },
                 ]}></InfoMiniCard>
               <InfoMiniCard
-                avatarSrc="user.png"
+                avatarSrc="user.jpg"
                 position="Арт-директор"
                 fullname="Иван иванов"
                 nickname="@vanyavanya"
