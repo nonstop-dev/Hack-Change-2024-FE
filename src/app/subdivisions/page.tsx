@@ -180,11 +180,7 @@ export default function ControlledAccordions() {
             square={true}
             onChange={handleAccordeonChange('panel2')}
             className="subdivisionsAccordion">
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2bh-content"
-              id="panel2bh-header"
-              className="subdivisionsAccordion">
+            <AccordionSummary expandIcon={<ExpandMoreIcon />} className="subdivisionsAccordion">
               <Typography sx={{ width: '33%', flexShrink: 0 }}>Users</Typography>
               <Typography sx={{ color: 'text.secondary' }}>Users</Typography>
             </AccordionSummary>

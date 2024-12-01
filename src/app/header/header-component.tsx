@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './header.module.scss';
-import { Autocomplete, Avatar, Box, IconButton, InputAdornment, TextField } from '@mui/material';
+import { Autocomplete, Avatar, Box, IconButton, InputAdornment, Link, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { usePathname } from 'next/navigation';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
@@ -19,9 +19,11 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.left}>
-        <Image className={styles.logo} src="/logo.svg" alt="МТС logo" width={48} height={48} priority />
-        <h1 className={styles.heading}>ПОРТАЛ</h1>
+      <div>
+        <Link href="/search" className={styles.left} style={{ textDecoration: 'none' }}>
+          <Image className={styles.logo} src="/logo.svg" alt="МТС logo" width={48} height={48} priority />
+          <h1 className={styles.heading}>ПОРТАЛ</h1>
+        </Link>
       </div>
       <div className={styles.headerRight}>
         {isSearchPage ? (
@@ -58,7 +60,9 @@ export default function Header() {
           <IconButton>
             <SettingsOutlinedIcon sx={{ width: 36, height: 36 }} />
           </IconButton>
-          <Avatar sx={{ width: 48, height: 48 }} src="user.png" variant="rounded" className="mdAvatar"></Avatar>
+          <Link href="/user" style={{ textDecoration: 'none' }}>
+            <Avatar sx={{ width: 48, height: 48 }} src="user.png" variant="rounded" className="mdAvatar"></Avatar>
+          </Link>
         </Box>
       </div>
     </header>
