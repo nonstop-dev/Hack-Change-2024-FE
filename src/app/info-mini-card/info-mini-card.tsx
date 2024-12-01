@@ -6,7 +6,7 @@ interface UserMiniCardProps {
   position: string;
   fullname: string;
   nickname: string;
-  avatarSrc: string;
+  avatarSrc?: string;
   breadCrumbs?: {
     url: string;
     title: string;
@@ -23,11 +23,15 @@ export default function InfoMiniCard({ position, fullname, nickname, avatarSrc, 
   });
   return (
     <Box className={styles.userMiniCardWrapper}>
-      <Avatar
-        sx={{ width: 64, height: 64 }}
-        src={avatarSrc}
-        variant="rounded"
-        className={styles.leftPart + ' mdAvatar'}></Avatar>
+      {avatarSrc ? (
+        <Avatar
+          sx={{ width: 64, height: 64 }}
+          src={avatarSrc}
+          variant="rounded"
+          className={styles.leftPart + ' mdAvatar'}></Avatar>
+      ) : (
+        ''
+      )}
       <Box className={styles.rightPart}>
         <Typography className="textSm">{position}</Typography>
         <Typography className={styles.fullname}>{fullname}</Typography>
