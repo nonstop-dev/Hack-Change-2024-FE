@@ -97,6 +97,6 @@ a {
   margin-bottom: 15px;
 }
 
-.subdivisionsAccordion:before: {
+.subdivisionsAccordion::before {
   display: none;
 }
