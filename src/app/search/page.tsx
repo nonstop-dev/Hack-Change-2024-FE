@@ -3,7 +3,8 @@ import { Autocomplete, TextField, InputAdornment, Box, Typography, Button } from
 import SearchIcon from '@mui/icons-material/Search';
 import style from './search-page.module.scss';
 import InfoMiniCard from '../info-mini-card/info-mini-card';
-import employeesData from '../../../employees.json';
+// import employeesData from '../../../employees.json';
+import { useEffect, useState } from 'react';
 export const dynamic = 'force-dynamic';
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },
@@ -15,33 +16,33 @@ const top100Films = [
 
 export default function SearchPage() {
   'use client';
-  const employees: any[] = employeesData;
-  //console.log(employees);
-  //fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => value.json().then(v => (employees = v)));
-  //const [employees, setEmployees] = useState<any>(employeesData);
-  // useEffect(() => {
-  //   fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => {
-  //     value.json().then(v => {
-  //       console.log(v);
-  //       setEmployees(v);
-  //     });
-  //   });
-  // }, []);
-  //let data = await fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees');
-  // let employees = await data.json();
-  // console.log(employees);
-  //console.log('employees');
+  const [employees, setEmployees] = useState<any>([]);
+  useEffect(() => {
+    fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => {
+      value.json().then(v => {
+        console.log(v);
+        setEmployees(v);
+      });
+    });
+  }, []);
   const onChangeLocation = (event: any) => {
     const val = event.target.value;
-    let employees;
+    let tmp = null;
     if (val.startsWith('@')) {
-      employees = employeesData.filter(emp => emp.nickname.includes(val.substring(1)));
+      tmp = employees.filter((emp: any) => emp.nickname.includes(val.substring(1)));
+      setEmployees(tmp);
+    } else if (!val.startsWith('@') && tmp != null) {
+      tmp = employees.filter((emp: any) => emp.name.includes(val));
+      setEmployees(tmp);
+      console.log(tmp);
     } else {
-      employees = employeesData.filter(emp => emp.name.includes(val));
-      console.log(employees);
-      //setEmployees(employees);
+      fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => {
+        value.json().then(v => {
+          console.log(v);
+          setEmployees(v);
+        });
+      });
     }
-    console.log(employees);
   };
   const isResult = false;
   return (
@@ -157,7 +158,7 @@ export default function SearchPage() {
             Сотрудники
           </Typography>
           <Box className={style.infoMiniCardContainer}>
-            {employees.map((employee, index) => (
+            {employees.map((employee: any, index: any) => (
               <InfoMiniCard
                 key={index}
                 position={employee.role}
@@ -228,4 +229,24 @@ export default function SearchPage() {
       </Box>
     </Box>
   );
+}
+function useValue(
+  employeesData: {
+    availability: string;
+    city: string;
+    department: string;
+    email: string;
+    id: number;
+    name: string;
+    nickname: string;
+    photoUrl: null;
+    project: string;
+    role: string;
+    skills: string[];
+    team: string;
+    timezone: string;
+    workHours: string;
+  }[]
+): { get: any; set: any } {
+  throw new Error('Function not implemented.');
 }
