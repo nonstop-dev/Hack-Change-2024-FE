@@ -3,7 +3,6 @@ import { Autocomplete, TextField, InputAdornment, Box, Typography, Button } from
 import SearchIcon from '@mui/icons-material/Search';
 import style from './search-page.module.scss';
 import InfoMiniCard from '../info-mini-card/info-mini-card';
-// import employeesData from '../../../employees.json';
 import { useEffect, useState } from 'react';
 export const dynamic = 'force-dynamic';
 const top100Films = [
@@ -297,24 +296,4 @@ export default function SearchPage() {
       </Box>
     </Box>
   );
-}
-function useValue(
-  employeesData: {
-    availability: string;
-    city: string;
-    department: string;
-    email: string;
-    id: number;
-    name: string;
-    nickname: string;
-    photoUrl: null;
-    project: string;
-    role: string;
-    skills: string[];
-    team: string;
-    timezone: string;
-    workHours: string;
-  }[]
-): { get: any; set: any } {
-  throw new Error('Function not implemented.');
 }
