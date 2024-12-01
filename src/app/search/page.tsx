@@ -25,23 +25,87 @@ export default function SearchPage() {
       });
     });
   }, []);
-  const onChangeLocation = (event: any) => {
+  const onChangeName = (event: any) => {
     const val = event.target.value;
     let tmp = null;
-    if (val.startsWith('@')) {
-      tmp = employees.filter((emp: any) => emp.nickname.includes(val.substring(1)));
-      setEmployees(tmp);
-    } else if (!val.startsWith('@') && tmp != null) {
-      tmp = employees.filter((emp: any) => emp.name.includes(val));
-      setEmployees(tmp);
-      console.log(tmp);
-    } else {
+    if (val == '') {
       fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => {
         value.json().then(v => {
           console.log(v);
           setEmployees(v);
         });
       });
+    } else if (val.startsWith('@') && employees.length > 0) {
+      tmp = employees.filter((emp: any) => emp.nickname.includes(val.substring(1)));
+      setEmployees(tmp);
+    } else if (!val.startsWith('@') && employees.length > 0) {
+      tmp = employees.filter((emp: any) => emp.name.includes(val));
+      setEmployees(tmp);
+      console.log(tmp);
+    }
+  };
+  const onChangeRole = (event: any) => {
+    const val = event.target.value;
+    let tmp = null;
+    if (val == '') {
+      fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => {
+        value.json().then(v => {
+          console.log(v);
+          setEmployees(v);
+        });
+      });
+    } else if (employees != null && employees.length > 0) {
+      tmp = employees.filter((emp: any) => emp.role.includes(val));
+      setEmployees(tmp);
+      console.log(tmp);
+    }
+  };
+  const onChangeCity = (event: any) => {
+    const val = event.target.value;
+    let tmp = null;
+    if (val == '') {
+      fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => {
+        value.json().then(v => {
+          console.log(v);
+          setEmployees(v);
+        });
+      });
+    } else if (employees != null && employees.length > 0) {
+      tmp = employees.filter((emp: any) => emp.city.includes(val));
+      setEmployees(tmp);
+      console.log(tmp);
+    }
+  };
+  const onChangeProject = (event: any) => {
+    const val = event.target.value;
+    let tmp = null;
+    if (val == '') {
+      fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => {
+        value.json().then(v => {
+          console.log(v);
+          setEmployees(v);
+        });
+      });
+    } else if (employees != null && employees.length > 0) {
+      tmp = employees.filter((emp: any) => emp.project.includes(val));
+      setEmployees(tmp);
+      console.log(tmp);
+    }
+  };
+  const onChangeDepartment = (event: any) => {
+    const val = event.target.value;
+    let tmp = null;
+    if (val == '') {
+      fetch('https://379s-momz-hgzd.gw-1a.dockhost.net/employees').then(value => {
+        value.json().then(v => {
+          console.log(v);
+          setEmployees(v);
+        });
+      });
+    } else if (employees != null && employees.length > 0) {
+      tmp = employees.filter((emp: any) => emp.department.includes(val));
+      setEmployees(tmp);
+      console.log(tmp);
     }
   };
   const isResult = false;
@@ -57,7 +121,7 @@ export default function SearchPage() {
             <TextField
               {...params}
               placeholder="ФИО, никнейм или должность"
-              onChange={onChangeLocation}
+              onChange={onChangeName}
               slotProps={{
                 input: {
                   type: 'search',
@@ -82,6 +146,7 @@ export default function SearchPage() {
             <TextField
               {...params}
               label="Город"
+              onChange={onChangeCity}
               slotProps={{
                 input: {
                   type: 'search',
@@ -100,6 +165,7 @@ export default function SearchPage() {
             <TextField
               {...params}
               label="Департамент"
+              onChange={onChangeDepartment}
               slotProps={{
                 input: {
                   type: 'search',
@@ -120,6 +186,7 @@ export default function SearchPage() {
             <TextField
               {...params}
               label="Должность"
+              onChange={onChangeRole}
               slotProps={{
                 input: {
                   type: 'search',
@@ -140,6 +207,7 @@ export default function SearchPage() {
             <TextField
               {...params}
               label="Проект"
+              onChange={onChangeProject}
               slotProps={{
                 input: {
                   type: 'search',
