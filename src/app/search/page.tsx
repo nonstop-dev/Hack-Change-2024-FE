@@ -3,7 +3,6 @@ import { Autocomplete, TextField, InputAdornment, Box, Typography, Button } from
 import SearchIcon from '@mui/icons-material/Search';
 import style from './search-page.module.scss';
 import InfoMiniCard from '../info-mini-card/info-mini-card';
-import { useEffect, useState } from 'react';
 import employeesData from '../../../employees.json';
 export const dynamic = 'force-dynamic';
 const top100Films = [

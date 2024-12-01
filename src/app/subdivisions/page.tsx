@@ -9,7 +9,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Box, Card, CardContent, Tab, Tabs } from '@mui/material';
 import InfoMiniCard from '../info-mini-card/info-mini-card';
 
-function CustomTabPanel(props: TabPanelProps) {
+function CustomTabPanel(props: any) {
   const { children, value, index, ...other } = props;
 
   return (
