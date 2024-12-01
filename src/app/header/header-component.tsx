@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div>
-        <Link href="/search" className={styles.left} style={{ textDecoration: 'none' }}>
+        <Link href="/subdivisions" className={styles.left} style={{ textDecoration: 'none' }}>
           <Image className={styles.logo} src="/logo.svg" alt="МТС logo" width={48} height={48} priority />
           <h1 className={styles.heading}>ПОРТАЛ</h1>
         </Link>
@@ -44,7 +44,9 @@ export default function Header() {
                     type: 'search',
                     startAdornment: (
                       <InputAdornment position="start">
-                        <SearchIcon></SearchIcon>
+                        <Link href="/search">
+                          <SearchIcon></SearchIcon>
+                        </Link>
                       </InputAdornment>
                     ),
                     sx: { borderRadius: 16 },
