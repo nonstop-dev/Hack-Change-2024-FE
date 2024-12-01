@@ -157,24 +157,16 @@ export default function SearchPage() {
           <Typography variant="h5" className="cardHeading" sx={{ marginBottom: '30px' }}>
             Сотрудники
           </Typography>
-          {employees.map((employee: any, index) => (
-            <Box className={style.infoMiniCardContainer} key={index}>
+          <Box className={style.infoMiniCardContainer}>
+            {employees.map((employee, index) => (
               <InfoMiniCard
+                key={index}
                 position={employee.role}
                 fullname={employee.name}
-                avatarSrc="user.jpg"
-                nickname={employee.nickname}>
-                {employee.role}
-                {employee.name}
-                breadCrumbs=
-                {[
-                  { url: 'test', title: 'test' },
-                  { url: 'test', title: 'test' },
-                  { url: 'test', title: 'test' },
-                ]}
-              </InfoMiniCard>
-            </Box>
-          ))}
+                avatarSrc="test"
+                nickname={employee.nickname}></InfoMiniCard>
+            ))}
+          </Box>
           {/* {employees.map((employee: any) => {
             <Box className={style.infoMiniCardContainer}>
               <InfoMiniCard
